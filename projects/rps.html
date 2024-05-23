@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title>Rock, Paper, Scissors!</title>
+</head>
+<body>
+<script type="text/javascript">
+var playAgain = "Y";
+var compMove = "blank";
+
+do {
+  var userMove = prompt("rock, paper, or scissors?");
+  var theRanNum = Math.random();
+
+  if (theRanNum < 0.33) {
+    compMove = "rock";
+  } else if (theRanNum < 0.66) {
+    compMove = "paper";
+  } else {
+    compMove = "scissors";
+  }
+
+  if (userMove == compMove) {
+    alert(userMove + " vs. " + compMove + "\nyou tie!");
+  }
+  else {
+    if (userMove == "rock") {
+      if(compMove == "scissors") {
+        alert(userMove + " vs. " + compMove + "\nyou win! :)");
+      } else {
+        alert(userMove + " vs. " + compMove + "\nyou lose! :(");
+      }
+    }
+
+    if (userMove == "paper") {
+      if(compMove == "rock") {
+        alert(userMove + " vs. " + compMove + "\nyou win! :)");
+      } else {
+        alert(userMove + " vs. " + compMove + "\nyou lose! :(");
+      }
+    }
+
+    if (userMove == "scissors") {
+      if(compMove == "paper") {
+        alert(userMove + " vs. " + compMove + "\nyou win! :)");
+      } else {
+        alert(userMove + " vs. " + compMove + "\nyou lose! :(");
+      }
+    }
+  }
+
+var playAgain = prompt("would you like to play again? y/n:");
+} while (playAgain != "n");
+
+</script>
+</body>
+</html>
