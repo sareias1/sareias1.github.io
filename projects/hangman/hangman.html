@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Hangman Game</title>
+        <!-- start google fonts -->
+            <link rel="preconnect" href="https://fonts.googleapis.com">
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+            <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&family=Underdog&display=swap" rel="stylesheet">
+        <!-- end google fonts -->
+        <link rel="icon" type="image/x-icon" href="favicon.ico">
+        <link rel="stylesheet" href="styles.css">
+        <script src="scripts.js" async defer></script>
+    </head>
+    <body onload="draw();">
+    <div id="main">
+        <div id="container">
+        <h1>Hangman</h1>
+        <p>Try to guess the word I'm thinking of before the drawing completes.</p>
+        
+        <canvas id="hangman" width="300" height="400"></canvas>
+        
+        <p id="correct_guess_output"></p>
+            
+        <form id="user_guess">
+            <label for="guess">Enter a letter: </label><br>
+            <input type="text" id="guess" name="guess" placeholder="ex. A">
+            <input type="button" value="Submit" onclick="play();">
+        </form>
+        <p id="update"></p>
+        
+        </div>
+    </div>
+    </body>
+</html>

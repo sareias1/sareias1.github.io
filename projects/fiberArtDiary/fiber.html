@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fiber Art Diary</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- google font import -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Ribeye+Marrow&display=swap" rel="stylesheet">
+    <!-- icon library for nav menu icon -->
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="scripts.js" async defer></script>
+</head>
+<body>
+<!-- responsive top nav -->
+<div class="nav" id="nav">
+    <a href="#home">Home</a>
+    <a href="#knitting">Knitting</a>
+    <a href="#crochet">Crochet</a>
+    <a href="javascript:void(0);" class="icon" onclick="showNav()">
+        <i class="fa fa-bars"></i>
+    </a>
+</div>
+
+<div id="main">
+    <!-- get name from user -->
+    <div id="intro">
+        <img src="images/yarn.png" id="yarn">
+        <h1 id="home">Knit & Crochet Diary</h1>
+        <form id="userForm">
+            <label for="nameInput">Name: </label>
+            <input type="text" id="nameInput" placeholder="Your name"> <input id="userFormBtn" type="button" value="Submit">
+            <br>
+            <b>Which fiber art is your favorite?</b><br>
+    
+            <input type="radio" name="preference" id="knitPreference">
+            <label for="knitPreference">Knitting</label>
+    
+            <input type="radio" name="preference" id="crochetPreference">
+            <label for="crochetPreference">Crochet</label>
+        </form><br>
+        <hr>
+        <p id="greeting"></p>
+        <p id="fiberPreference" style="margin-top: -1rem;"></p>
+        <hr>
+    </div>
+
+
+    <div id="knitting">
+        <h2>Knitting</h2>
+        <input type="text" id="knitSearch" class="searchBar" onkeyup="knitSearch()" placeholder="Search for a pattern type...">
+    <!-- responsive table -->
+        <div style="overflow-x: auto;">
+            <table id="knittingTable">
+                <tr>
+                    <th>Image</th>
+                    <th>Pattern Name</th>
+                    <th>Designer</th>
+                    <th>Type</th>
+                    <th>Yarn Weight</th>
+                    <th>Yarn Plans</th>
+                    <th>Start Date</th>
+                    <th>Finish Date</th>
+                </tr>
+                <tr>
+                    <td><img src="images/cardiganno9.jpg" id="openModal1"><div class="hide">Click to enlarge</div></td>
+                    <td><a href="https://www.ravelry.com/patterns/library/cardigan-no-9">Cardigan No. 9</a></td>
+                    <td>My Favourite Things</td>
+                    <td>Sweater</td>
+                    <td>Aran + Lace</td>
+                    <td>Knitting for Olive Heavy Merino<br>Knitting for Olive Soft Silk Mohair</td>
+                    <td>01/30/2025</td>
+                    <td>03/22/2025</td>
+                </tr>
+                <tr>
+                    <td><img src="images/mothtee.jpg" id="openModal2"><div class="hide">Click to enlarge</div></td>
+                    <td><a href="https://ko-fi.com/s/5b6b98e7ab">The Moth Tee</a></td>
+                    <td>10.00mm</td>
+                    <td>Top</td>
+                    <td>DK</td>
+                    <td>Lang Yarns Frida</td>
+                    <td>03/31/2025</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td><img src="images/oslohat.jpg" id="openModal3"><div class="hide">Click to enlarge</div></td>
+                    <td><a href="https://www.ravelry.com/patterns/library/oslo-hat-5">Oslo Hat</a></td>
+                    <td>PetiteKnit</td>
+                    <td>Accessory</td>
+                    <td>DK + Lace</td>
+                    <td>Sandnes Garn Peer Gynt<br>Hobbii Diablo Wild Print</td>
+                    <td>04/14/2025</td>
+                    <td></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <br><br>
+    <div id="crochet">
+        <h2>Crochet</h2>
+        <input type="text" id="crochetSearch" class="searchBar" onkeyup="crochetSearch()" placeholder="Search for a pattern type...">
+        <div style="overflow-x: auto;">
+            <table id="crochetTable">
+                <tr>
+                    <th>Image</th>
+                    <th>Pattern Name</th>
+                    <th>Designer</th>
+                    <th>Type</th>
+                    <th>Yarn Weight</th>
+                    <th>Yarn Plans</th>
+                    <th>Start Date</th>
+                    <th>Finish Date</th>
+                </tr>
+                <tr>
+                    <td><img src="images/filetsword.jpg" id="openModal4"><div class="hide">Click to enlarge</div></td>
+                    <td><a href="https://guppycrochet.com/products/filet-crochet-sword-chart-free">Filet Crochet Sword</a></td>
+                    <td>Guppy Crochet</td>
+                    <td class="patternType">Decor</td>
+                    <td>Crochet Thread</td>
+                    <td>Aunt Lydia's Classic 10</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td><img src="images/kittyscarf.jpg" id="openModal5"><div class="hide">Click to enlarge</div></td>
+                    <td><a href="https://www.etsy.com/listing/1604682831/kitty-scarf-crochet-pattern-pdf-digital">Kitty Scarf</a></td>
+                    <td>Xallua</td>
+                    <td class="patternType">Accessory</td>
+                    <td>Any</td>
+                    <td>DROPS Alpaca Bouclé</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td><img src="images/grannysqvest.jpg" id="openModal6"><div class="hide">Click to enlarge</div></td>
+                    <td>Granny Square Vest</td>
+                    <td>Self draft</td>
+                    <td class="patternType">Top</td>
+                    <td>Any</td>
+                    <td>Undecided</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <!-- modal boxes -->
+        <div id="modal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <div id="modalContent"></div>
+            </div>
+        </div>
+
+</div>
+
+</body>
+</html>
