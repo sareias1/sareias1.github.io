@@ -6,6 +6,10 @@ const closeSpan = document.getElementsByClassName("close")[0];
 
 // modal functions:
 
+invManModal.onclick = function() {
+    modal.style.display = "block";
+    modalContent.innerHTML = `<video src="projects/InventoryManagement/showcase.mp4" id="modalVid" controls>`;
+}
 
 pomoModal.onclick = function() {
     modal.style.display = "block";
